@@ -8,7 +8,7 @@ env:
     - ALI_REGISTRY=registry.us-west-1.aliyuncs.com/my-k8s-gcr-io/google_containers.kube-apiserver
 
 before_script:
-  - echo "123"
+  - docker login $ALI_REGISTRY -u $Ali_Acc  -p $Ali_Pwd
 
 script:
   - echo "start pull and retag and push"
