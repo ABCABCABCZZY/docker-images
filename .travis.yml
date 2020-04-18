@@ -5,10 +5,10 @@ services:
 
 env:
   global:
-    - ALI_REGISTRY=registry.cn-shenzhen.aliyuncs.com/test_images
+    - ALI_REGISTRY=registry.us-west-1.aliyuncs.com/my-k8s-gcr-io/google_containers.kube-apiserver
 
 before_script:
-  - docker login $ALI_REGISTRY -u $Ali_Acc  -p $Ali_Pwd
+  - echo "123"
 
 script:
   - echo "start pull and retag and push"
