@@ -5,7 +5,7 @@ services:
 
 env:
   global:
-    - ALI_REGISTRY=registry.us-west-1.aliyuncs.com/my-k8s-gcr-io
+    - ALI_REGISTRY=registry.cn-shenzhen.aliyuncs.com/my-k8s-gcr-io
 
 before_script:
   - docker login $ALI_REGISTRY -u $Ali_Acc  -p $Ali_Pwd
@@ -18,8 +18,8 @@ script:
     	image_name=${image##*/}
     	docker pull $image
         echo $ALI_REGISTRY
-        docker tag $image $ALI_REGISTRY/$image_name
+        docker tag $image $ALI_REGISTRY/"google_containers"+$image_name
         
     	# push到阿里云仓库
-    	docker push $ALI_REGISTRY/$image_name
+    	docker push $ALI_REGISTRY/"google_containers"+$image_name
     done
