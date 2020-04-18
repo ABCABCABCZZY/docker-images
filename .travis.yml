@@ -5,7 +5,7 @@ services:
 
 env:
   global:
-    - ALI_REGISTRY=registry.us-west-1.aliyuncs.com/my-k8s-gcr-io/google_containers.kube-apiserver
+    - ALI_REGISTRY=registry.us-west-1.aliyuncs.com/my-k8s-gcr-io
 
 before_script:
   - docker login $ALI_REGISTRY -u $Ali_Acc  -p $Ali_Pwd
